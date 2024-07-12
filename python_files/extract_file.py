@@ -13,4 +13,4 @@ def extract(*args):
 
 # extract(config["tlc_api_url"], config["tlc_app_token"], config["tlc_username"], config["tlc_password"])
 extracted_data = extract(config["tlc_api_url"], config["tlc_app_token"], config["tlc_username"], config["tlc_password"])
-print(extracted_data)
+# print(extracted_data)

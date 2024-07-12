@@ -10,6 +10,7 @@ config = load_config("/Users/jbshome/Desktop/tlc_application_etl/configuration/c
 def transform(data):
     # Convert to pandas DataFrame
     df = pd.DataFrame.from_records(data)
+    df = df.rename(columns={'app_date':'application_date', 'type':'license_type', 'lastupdate':'last_update'})
     return df
 
 extracted_data = extract(config["tlc_api_url"], config["tlc_app_token"], config["tlc_username"], config["tlc_password"])
