@@ -15,4 +15,4 @@ def transform(data):
 
 extracted_data = extract(config["tlc_api_url"], config["tlc_app_token"], config["tlc_username"], config["tlc_password"])
 clean_data = transform(extracted_data)
-print(clean_data)
+# print(clean_data)

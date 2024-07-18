@@ -12,9 +12,12 @@ csv_file = "/Users/jbshome/Desktop/tlc_application_etl/csv_files/csv_file.csv"
 # Fucntion to load data to a csv file
 def load(df):
     df = df.to_csv(csv_file, index=False)
-    return df
+    return df 
 
 if __name__ == "__main__":
     extracted_data = extract(config["tlc_api_url"], config["tlc_app_token"], config["tlc_username"], config["tlc_password"])
     clean_data = transform(extracted_data)
     load(clean_data)
+
+# Function to load data to postgres
+# def load_to_postgres(df):
