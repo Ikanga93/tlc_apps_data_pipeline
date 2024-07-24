@@ -27,8 +27,8 @@ def transform(data):
     # Convert the last update to timestamp
     df['last_update'] = pd.to_datetime(df['last_update'])
     # Create a csv file that record te monthly trend of the number of applications submitted since the beginning of the dataset
-    df['month'] = df['application_date'].dt.to_period('M')
-    df.groupby('month').size().reset_index(name='count').to_csv("tlc_applications_monthly.csv", index=False)
+    # df['month'] = df['application_date'].dt.to_period('M')
+    # df.groupby('month').size().reset_index(name='count').to_csv("tlc_applications_monthly.csv", index=False)
     
 
     return df
