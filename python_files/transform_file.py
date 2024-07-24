@@ -22,7 +22,14 @@ def transform(data):
     with open("tlc_applications_submitted.txt", "w") as file:
         file.write(f"Number of rows: {df[df['days_since_last_update'] == 0].shape[0]}\n")
         file.write(f"Date: {pd.to_datetime('now').strftime('%Y-%m-%d')}\n")
-
+    # Convert the application date to timestamp
+    df['application_date'] = pd.to_datetime(df['application_date'])
+    # Convert the last update to timestamp
+    df['last_update'] = pd.to_datetime(df['last_update'])
+    # Create a csv file that record te monthly trend of the number of applications submitted since the beginning of the dataset
+    df['month'] = df['application_date'].dt.to_period('M')
+    df.groupby('month').size().reset_index(name='count').to_csv("tlc_applications_monthly.csv", index=False)
+    
 
     return df
 
