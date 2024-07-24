@@ -27,7 +27,7 @@ def load_to_postgres(df):
         engine = create_engine(connection_string)
 
         # Load data to the table
-        df.to_sql('tlc_drivers', engine, if_exists='append', index=False)
+        df.to_sql('tlc_drivers', engine, if_exists='replace', index=False)
         logging.info("Data loaded to Postgres successfully")
         # Commit the transaction (implicitly handled by SQLAlchemy)
         
