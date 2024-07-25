@@ -1,0 +1,121 @@
+2024-07-25 17:34:11,721 - root - INFO - Configuration file loaded successfully
+2024-07-25 17:38:14,138 - root - INFO - Configuration file loaded successfully
+2024-07-25 17:38:46,922 - root - INFO - Configuration file loaded successfully
+2024-07-25 17:40:48,382 - root - INFO - Configuration file loaded successfully
+2024-07-25 17:40:48,382 - root - INFO - Last extraction timestamp file loaded successfully
+2024-07-25 17:40:48,383 - root - INFO - Last extraction timestamp: 
+2024-07-25 17:40:48,384 - root - INFO - Last extraction timestamp file created successfully
+2024-07-25 17:40:48,384 - root - INFO - Current extraction timestamp saved successfully
+2024-07-25 17:40:48,384 - root - INFO - Last extraction timestamp file loaded successfully
+2024-07-25 17:40:48,385 - root - INFO - Last extraction timestamp: 
+2024-07-25 17:40:48,385 - root - ERROR - Cannot extract data from the API
+2024-07-25 17:50:26,474 - root - INFO - Configuration file loaded successfully
+2024-07-25 17:50:26,475 - root - INFO - Last extraction timestamp file loaded successfully
+2024-07-25 17:50:26,475 - root - INFO - Last extraction timestamp: 
+2024-07-25 17:50:26,475 - root - INFO - Last extraction timestamp file created successfully
+2024-07-25 17:50:26,475 - root - INFO - Current extraction timestamp saved successfully
+2024-07-25 17:50:26,475 - root - INFO - Config file successfully loaded
+2024-07-25 17:50:26,813 - root - INFO - Config file successfully loaded
+2024-07-25 17:50:26,813 - root - INFO - Last extraction timestamp file loaded successfully
+2024-07-25 17:50:26,813 - root - INFO - Last extraction timestamp: 
+2024-07-25 17:50:26,813 - root - ERROR - Cannot extract data from the API
+2024-07-25 17:50:26,814 - root - ERROR - An error occurred
+2024-07-25 17:50:26,860 - root - ERROR - An error occurred while connecting to the database
+2024-07-25 17:50:43,758 - root - INFO - Configuration file loaded successfully
+2024-07-25 17:50:43,758 - root - INFO - Last extraction timestamp file loaded successfully
+2024-07-25 17:50:43,759 - root - INFO - Last extraction timestamp: 
+2024-07-25 17:50:43,759 - root - INFO - Last extraction timestamp file created successfully
+2024-07-25 17:50:43,759 - root - INFO - Current extraction timestamp saved successfully
+2024-07-25 17:50:43,759 - root - INFO - Config file successfully loaded
+2024-07-25 17:51:25,515 - root - INFO - Configuration file loaded successfully
+2024-07-25 17:51:25,515 - root - INFO - Last extraction timestamp file loaded successfully
+2024-07-25 17:51:25,515 - root - INFO - Last extraction timestamp: 
+2024-07-25 17:51:25,515 - root - INFO - Last extraction timestamp file created successfully
+2024-07-25 17:51:25,515 - root - INFO - Current extraction timestamp saved successfully
+2024-07-25 17:51:25,516 - root - INFO - Config file successfully loaded
+2024-07-25 17:51:25,516 - root - INFO - Last extraction timestamp file loaded successfully
+2024-07-25 17:51:25,517 - root - INFO - Last extraction timestamp: 
+2024-07-25 17:51:25,517 - root - ERROR - Cannot extract data from the API
+2024-07-25 17:51:25,517 - root - ERROR - An error occurred
+2024-07-25 17:52:02,136 - root - INFO - Configuration file loaded successfully
+2024-07-25 17:52:02,136 - root - INFO - Last extraction timestamp file loaded successfully
+2024-07-25 17:52:02,136 - root - INFO - Last extraction timestamp: 
+2024-07-25 17:52:02,137 - root - INFO - Last extraction timestamp file created successfully
+2024-07-25 17:52:02,137 - root - INFO - Current extraction timestamp saved successfully
+2024-07-25 17:52:02,137 - root - INFO - Config file successfully loaded
+2024-07-25 17:52:02,137 - root - INFO - Last extraction timestamp file loaded successfully
+2024-07-25 17:52:02,138 - root - INFO - Last extraction timestamp: 
+2024-07-25 17:52:02,138 - root - ERROR - Cannot extract data from the API
+2024-07-25 17:52:02,138 - root - ERROR - An error occurred
+2024-07-25 17:52:10,827 - root - INFO - Configuration file loaded successfully
+2024-07-25 17:52:10,827 - root - INFO - Last extraction timestamp file loaded successfully
+2024-07-25 17:52:10,827 - root - INFO - Last extraction timestamp: 
+2024-07-25 17:52:10,828 - root - INFO - Last extraction timestamp file created successfully
+2024-07-25 17:52:10,828 - root - INFO - Current extraction timestamp saved successfully
+2024-07-25 17:52:10,828 - root - INFO - Config file successfully loaded
+2024-07-25 17:52:10,828 - root - INFO - Last extraction timestamp file loaded successfully
+2024-07-25 17:52:10,829 - root - INFO - Last extraction timestamp: 
+2024-07-25 17:52:10,829 - root - ERROR - Cannot extract data from the API
+2024-07-25 17:52:10,829 - root - ERROR - An error occurred
+2024-07-25 17:52:46,465 - root - INFO - Configuration file loaded successfully
+2024-07-25 17:52:46,465 - root - INFO - Last extraction timestamp file loaded successfully
+2024-07-25 17:52:46,465 - root - INFO - Last extraction timestamp: 
+2024-07-25 17:52:46,465 - root - INFO - Last extraction timestamp file created successfully
+2024-07-25 17:52:46,465 - root - INFO - Current extraction timestamp saved successfully
+2024-07-25 17:52:46,466 - root - INFO - Last extraction timestamp file loaded successfully
+2024-07-25 17:52:46,467 - root - INFO - Last extraction timestamp: 
+2024-07-25 17:52:46,467 - root - ERROR - Cannot extract data from the API
+2024-07-25 17:52:51,501 - root - INFO - Configuration file loaded successfully
+2024-07-25 17:52:51,502 - root - INFO - Last extraction timestamp file loaded successfully
+2024-07-25 17:52:51,502 - root - INFO - Last extraction timestamp: 
+2024-07-25 17:52:51,502 - root - INFO - Last extraction timestamp file created successfully
+2024-07-25 17:52:51,502 - root - INFO - Current extraction timestamp saved successfully
+2024-07-25 17:52:51,502 - root - INFO - Last extraction timestamp file loaded successfully
+2024-07-25 17:52:51,503 - root - INFO - Last extraction timestamp: 
+2024-07-25 17:52:51,504 - root - ERROR - Cannot extract data from the API
+2024-07-25 17:59:51,706 - root - INFO - Configuration file loaded successfully
+2024-07-25 17:59:51,707 - root - INFO - Last extraction timestamp file loaded successfully
+2024-07-25 17:59:51,707 - root - INFO - Last extraction timestamp: 
+2024-07-25 17:59:51,707 - root - INFO - Last extraction timestamp file created successfully
+2024-07-25 17:59:51,708 - root - INFO - Current extraction timestamp saved successfully
+2024-07-25 17:59:51,709 - root - INFO - Last extraction timestamp file loaded successfully
+2024-07-25 17:59:51,709 - root - INFO - Last extraction timestamp: 
+2024-07-25 17:59:51,710 - root - INFO - Socrata client created successfully
+2024-07-25 17:59:53,480 - root - INFO - Data extracted successfully
+2024-07-25 18:00:36,649 - root - INFO - Configuration file loaded successfully
+2024-07-25 18:00:36,650 - root - INFO - Last extraction timestamp file loaded successfully
+2024-07-25 18:00:36,650 - root - INFO - Last extraction timestamp: 
+2024-07-25 18:00:36,650 - root - INFO - Last extraction timestamp file created successfully
+2024-07-25 18:00:36,650 - root - INFO - Current extraction timestamp saved successfully
+2024-07-25 18:00:36,651 - root - INFO - Config file successfully loaded
+2024-07-25 18:00:36,652 - root - INFO - Last extraction timestamp file loaded successfully
+2024-07-25 18:00:36,652 - root - INFO - Last extraction timestamp: 
+2024-07-25 18:00:36,652 - root - INFO - Socrata client created successfully
+2024-07-25 18:00:37,722 - root - INFO - Data extracted successfully
+2024-07-25 18:00:37,738 - root - INFO - Dataframe successfully created
+2024-07-25 18:02:17,480 - root - INFO - Configuration file loaded successfully
+2024-07-25 18:02:17,481 - root - INFO - Last extraction timestamp file loaded successfully
+2024-07-25 18:02:17,481 - root - INFO - Last extraction timestamp: 
+2024-07-25 18:02:17,482 - root - INFO - Last extraction timestamp file created successfully
+2024-07-25 18:02:17,483 - root - INFO - Current extraction timestamp saved successfully
+2024-07-25 18:02:17,484 - root - INFO - Config file successfully loaded
+2024-07-25 18:02:18,596 - root - INFO - Config file successfully loaded
+2024-07-25 18:02:18,598 - root - INFO - Last extraction timestamp file loaded successfully
+2024-07-25 18:02:18,598 - root - INFO - Last extraction timestamp: 
+2024-07-25 18:02:18,599 - root - INFO - Socrata client created successfully
+2024-07-25 18:02:19,291 - root - INFO - Data extracted successfully
+2024-07-25 18:02:19,303 - root - INFO - Dataframe successfully created
+2024-07-25 18:02:21,218 - root - INFO - Data loaded to Postgres successfully
+2024-07-25 18:02:32,079 - root - INFO - Configuration file loaded successfully
+2024-07-25 18:02:32,080 - root - INFO - Last extraction timestamp file loaded successfully
+2024-07-25 18:02:32,080 - root - INFO - Last extraction timestamp: 
+2024-07-25 18:02:32,081 - root - INFO - Last extraction timestamp file created successfully
+2024-07-25 18:02:32,081 - root - INFO - Current extraction timestamp saved successfully
+2024-07-25 18:02:32,082 - root - INFO - Config file successfully loaded
+2024-07-25 18:02:32,605 - root - INFO - Config file successfully loaded
+2024-07-25 18:02:32,606 - root - INFO - Last extraction timestamp file loaded successfully
+2024-07-25 18:02:32,606 - root - INFO - Last extraction timestamp: 
+2024-07-25 18:02:32,606 - root - INFO - Socrata client created successfully
+2024-07-25 18:02:33,512 - root - INFO - Data extracted successfully
+2024-07-25 18:02:33,639 - root - INFO - Dataframe successfully created
+2024-07-25 18:02:37,367 - root - INFO - Data loaded to Postgres successfully

@@ -9,7 +9,7 @@ import logging
 logging.basicConfig(filename="transform.log", level=logging.INFO, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s")
 
 # Config file path
-config = load_config("/Users/jbshome/Desktop/tlc_application_etl/configuration/config.json")
+config = load_config("/Users/jbshome/Desktop/tlc_application_etl/config/dev/config.json")
 logging.info("Config file successfully loaded")
 
 # Retry decorator to retry the transform function if there is an error

@@ -9,13 +9,13 @@ import logging
 logging.basicConfig(filename="extract.log", level=logging.INFO, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s")
 
 # Config file path
-config = load_config("/Users/jbshome/Desktop/tlc_application_etl/configuration/config.json")
+config = load_config("/Users/jbshome/Desktop/tlc_application_etl/config/dev/config.json")
 logging.info("Configuration file loaded successfully")
 
 # Define the default timestamp
 DEFAULT_TIMESTAMP = datetime(1970,1,1)
 
-# Retry decorator to retry the get_last_extraction_time function if there is an error 
+# Retry decorator to retry the get_last_extraction_time function if there is an error
 @retry(stop_max_delay=10000, wait_fixed=2000, stop_max_attempt_number=7)
 # Function to read the last extraction timestamp from a file 
 def get_last_extraction_time():
@@ -91,4 +91,4 @@ def extract(*args):
 if __name__ == "__main__":
     # Call the extract
     extracted_data = extract(config["tlc_api_url"], config["tlc_app_token"], config["tlc_username"], config["tlc_password"])
-    #print(extracted_data)
+    print(extracted_data)
