@@ -1,4 +1,4 @@
-#!/Users/jbshome/Desktop/tlc_application_etl/tlc_env/bin/python
+#!/Users/jbshome/Desktop/etl_folder/tlc_application_etl/tlc_env/bin/python3.12
 # -*- coding: utf-8 -*-
 import re
 import sys

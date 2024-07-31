@@ -1,12 +1,36 @@
 {
-    "tlc_api_url": "data.cityofnewyork.us",
-    "tlc_app_token": "3n24PhVfrGN0jpYvSlbkFd7M3",
-    "tlc_username": "ekuke003@gmail.com",
-    "tlc_password": "D2racine4ac#",
-    "dpec_code": "dpec-ucu7",
-    "host": "localhost",
-    "database": "tlcdb",
-    "user": "postgres",
-    "password": "D2racine4ac#",
-    "port": "5432"
+    "api_params": {
+        "tlc_api_url": "data.cityofnewyork.us",
+        "tlc_app_token": "3n24PhVfrGN0jpYvSlbkFd7M3",
+        "tlc_username": "ekuke003@gmail.com",
+        "tlc_password": "D2racine4ac#",
+        "dpec_code": "dpec-ucu7"
+    },
+    "db_params": {
+        "host": "localhost",
+        "database": "tlcdb",
+        "user": "postgres",
+        "password": "D2racine4ac#",
+        "port": "5432"
+    },
+    "logging": {
+        "log_file": "logs/tlc.log",
+        "log_level": "INFO",
+        "log_datefmt": "%Y-%m-%d %H:%M:%S",
+        "log_format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+    },
+    "schema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+            "app_no": {"type": "number", "minimum": 0},
+            "type": {"type": "string"},
+            "app_date": {"type": "string", "format": "floating_timestamp"},
+            "status": {"type": "string"},
+            "other_requirements": {"type": "string"},
+            "lastupdate": {"type": "string", "format": "floating_timestamp"}
+        },
+        "required": ["app_no", "type", "app_date", "status", "other_requirements", "lastupdate"]
+    }
+    
 }

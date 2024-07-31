@@ -6,10 +6,10 @@ from retrying import retry
 import logging
 
 # Logging configuration
-logging.basicConfig(filename="transform.log", level=logging.INFO, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s")
+logging.basicConfig(filename="logs/transform.log", level=logging.INFO, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s")
 
 # Config file path
-config = load_config("/Users/jbshome/Desktop/tlc_application_etl/config/dev/config.json")
+config = load_config("config.json")
 logging.info("Config file successfully loaded")
 
 # Retry decorator to retry the transform function if there is an error
