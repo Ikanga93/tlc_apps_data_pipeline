@@ -97,20 +97,13 @@ def extract(*args):
 
         # Perform data validation
         validator.validate_schema(data)
-        logging.info("Schema validation completed")
         validator.validate_format_and_type(data, format_type_rules={"app_no": float, "type": str, "app_date": str, "status": str, "other_requirements": str, "lastupdate": str})
-        logging.info("Format and type validation completed")
         validator.check_null_and_missing_values(data, required_columns=["app_no", "type", "app_date", "status", "other_requirements", "lastupdate"])
-        logging.info("Null and missing values check completed")
         validator.check_range(data, column_ranges={"app_no": (0, 1000000000)})
-        logging.info("Range check completed")
         validator.detect_duplicates(data, unique_columns=["app_no"])
-        logging.info("Duplicates check completed")
         # validator.check_consistency(data, consistency_rules=[{"fields": ("app_no", "type"), "condition": lambda x, y: x in y}])
         validator.cross_field_validation(data, cross_field_rules=[{"fields": ["app_no", "status"], "condition": lambda x, y: x != y}])
-        logging.info("Cross field validation completed")
         validator.validate_pattern(data, patterns={"app_date": r"\d{4}-\d{2}-\d{2}"})
-        logging.info("Pattern validation completed")
         validator.logger.info("Data validation completed")
 
 
@@ -132,4 +125,4 @@ if __name__ == "__main__":
                              config["api_params"]["tlc_app_token"], 
                              config["api_params"]["tlc_username"], 
                              config["api_params"]["tlc_password"])
-    # print(extracted_data.head())
+    # print(extracted_data)
