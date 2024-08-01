@@ -45,18 +45,7 @@ class DataValidator:
                 self.logger.info("Logging configured successfully")
             except Exception as e:
                 self.logger.error(f"Unexpected error loading logging configuration: {e}")
-    '''
-    # Method to retrieve the data from the module
-    def get_data_from_module(self):
-        try:
-            data = extract.data # Access the data from the modeule
-            self.logger.info("Data extracted successfully from the module")
-            return data
         
-        except AttributeError as e:
-            self.logger.error(f"Error retrieving data from the module: {e}")
-            raise
-     '''       
     # Method to validate the schema of the data records
     def validate_schema(self, data):
         if not self.schema:
@@ -71,15 +60,18 @@ class DataValidator:
             self.logger.error(f"Schema validation failed for record: {e.message}")
 
     # Method to validate format and type of the data records
-    def validate_format_and_type(self, data, column_formats):
-        for column, expected_format in column_formats.items():
+    def validate_format_and_type(self, data, format_type_rules):
+        for column, expected_type in format_type_rules.items():
             for record in data:
                 try:
                     value = record.get(column)
-                    if not isinstance(value, expected_format):
-                        self.logger.error(f"Data type validation failed for column '{column}': Expected {expected_format}, got {type(value)}")
+                    if not isinstance(value, expected_type):
+                        self.logger.error(f"Data type validation failed for column '{column}': " 
+                                          f"Expected {expected_type}, got {type(value)}. Record: {record}")
                 except Exception as e:
-                    self.logger.error(f"Error in format and type check: {e}")
+                    self.logger.error(f"Error in format and type check for columns '{column}' "
+                                      f"with value '{value}': {e}"
+                                      )
 
     # Method to check for null and missing values in the data records
     def check_null_and_missing_values(self, data, required_columns):
@@ -118,20 +110,6 @@ class DataValidator:
         except Exception as e:
             self.logger.error(f"Error in duplicate detection: {e}")
 
-    # Method to check the consistency of the data records
-    def check_consistency(self, data, consistency_rules):
-        try:
-            for rule in consistency_rules:
-                field1, field2 = rule['fields']
-                condition = rule.get('condition', lambda x, y: x == y) # Default condition is equality
-                for record in data:
-                    value1 = record.get(field1)
-                    value2 = record.get(field2)
-                    if record.get(field1) != record.get(field2):
-                        self.logger.error(f"Consistency check failed between fields '{field1}' and '{field2}'")
-        except Exception as e:
-            self.logger.error(f"Error in consistency check: {e}")
-
     # Method to check the uniqueness of the data records
     def cross_field_validation(self, data, cross_field_rules):
         try:
@@ -154,11 +132,3 @@ class DataValidator:
                         self.logger.error(f"Pattern check failed for column '{column}': Value '{value}' does not match pattern '{pattern}'")
         except Exception as e:
             self.logger.error(f"Error in pattern validation: {e}")
-'''
-if __name__ == "__main__":
-    config_file = "/Users/jbshome/Desktop/etl_folder/tlc_application_etl/config/config.json"
-    validator = DataValidator(config_file=config_file)
-
-    # Retrieve the data from the module
-    data = validator.get_data_from_module()
-'''

@@ -4,6 +4,7 @@ from config import load_config
 from datetime import datetime
 from retrying import retry
 import logging
+import pandas as pd
 from data_validation import DataValidator
 
 # Config file path
@@ -80,37 +81,41 @@ def extract(*args):
         # Query the data from the API using the last extraction timestamp
         query = f'lastupdate >= "{last_extraction_time.isoformat()}"'
         # Extract the data from the API using the query
-        data = client.get(config["api_params"]["dpec_code"], where=query, limit=3621)
+        data_01 = client.get(config["api_params"]["dpec_code"], where=query, limit=3621)
+        # print(data_01)
         logging.info("Data extracted successfully")
 
-        # Validate each record against the schema. If a record does not conform to the schema, a ValidationError is raised.
-        for record in data:
-            # Ensure `app_no` is a number
-            if 'app_no' in record:
-                app_no_value = record['app_no']
-                if isinstance(app_no_value, str):
-                    try:
-                        record['app_no'] = float(app_no_value)  # Convert to float for broader number support
-                        logging.debug(f"Converted app_no to number: {record['app_no']}")
-                    except ValueError:
-                        logging.error(f"Cannot convert app_no value '{app_no_value}' to number")
-                else:
-                    logging.error(f"app_no value '{app_no_value}' is not a string")
-            else:
-                continue
+        df = pd.DataFrame(data_01)
+        if df.empty:
+            logging.info("No new data extracted")
+            return None
+
+        # Remove duplicates, Keeping the first occurrence
+        data = df.drop_duplicates(subset="app_no", keep="first")
+        logging.info("Duplicates removed")
+
 
         # Perform data validation
         validator.validate_schema(data)
-        validator.validate_format_and_type(data, column_formats={"app_no": "number", "type": str, "app_date": str, "status": str, "other_requirements": str, "lastupdate": str})
+        logging.info("Schema validation completed")
+        validator.validate_format_and_type(data, format_type_rules={"app_no": float, "type": str, "app_date": str, "status": str, "other_requirements": str, "lastupdate": str})
+        logging.info("Format and type validation completed")
         validator.check_null_and_missing_values(data, required_columns=["app_no", "type", "app_date", "status", "other_requirements", "lastupdate"])
+        logging.info("Null and missing values check completed")
         validator.check_range(data, column_ranges={"app_no": (0, 1000000000)})
+        logging.info("Range check completed")
         validator.detect_duplicates(data, unique_columns=["app_no"])
-        validator.check_consistency(data, consistency_rules=[{"fields": ("app_no", "type"), "condition": lambda x, y: x in y}])
+        logging.info("Duplicates check completed")
+        # validator.check_consistency(data, consistency_rules=[{"fields": ("app_no", "type"), "condition": lambda x, y: x in y}])
         validator.cross_field_validation(data, cross_field_rules=[{"fields": ["app_no", "status"], "condition": lambda x, y: x != y}])
+        logging.info("Cross field validation completed")
         validator.validate_pattern(data, patterns={"app_date": r"\d{4}-\d{2}-\d{2}"})
+        logging.info("Pattern validation completed")
         validator.logger.info("Data validation completed")
 
+
         return data
+    
     # Catch errors if there is an error with the API
     except Exception as ExtractError:
         logging.error("Cannot extract data from the API")
@@ -123,5 +128,8 @@ def extract(*args):
 # Main function
 if __name__ == "__main__":
     # Call the extract
-    extracted_data = extract(config["api_params"]["tlc_api_url"], config["api_params"]["tlc_app_token"], config["api_params"]["tlc_username"], config["api_params"]["tlc_password"])
-    print(extracted_data.head())
+    extracted_data = extract(config["api_params"]["tlc_api_url"], 
+                             config["api_params"]["tlc_app_token"], 
+                             config["api_params"]["tlc_username"], 
+                             config["api_params"]["tlc_password"])
+    # print(extracted_data.head())

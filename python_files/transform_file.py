@@ -5,12 +5,13 @@ from config import load_config
 from retrying import retry
 import logging
 
-# Logging configuration
-logging.basicConfig(filename="logs/transform.log", level=logging.INFO, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s")
-
 # Config file path
-config = load_config("config.json")
-logging.info("Config file successfully loaded")
+config_file_path = "/Users/jbshome/Desktop/etl_folder/tlc_application_etl/config/config.json"
+config = load_config(config_file_path)
+logging.info("Config file not found")
+
+# Logging configuration
+logging.basicConfig(**config["logging"])
 
 # Retry decorator to retry the transform function if there is an error
 @retry(stop_max_delay=10000, wait_fixed=2000, stop_max_attempt_number=7)
@@ -48,7 +49,7 @@ def transform(data):
 # Main function
 if __name__ == "__main__":
     # Extract data from the API
-    extracted_data = extract(config["tlc_api_url"], config["tlc_app_token"], config["tlc_username"], config["tlc_password"])
+    extracted_data = extract(config["api_params"]["tlc_api_url"], config["api_params"]["tlc_app_token"], config["api_params"]["tlc_username"], config["api_params"]["tlc_password"])
     # Transform the extracted data  
     clean_data = transform(extracted_data)
     print(clean_data)

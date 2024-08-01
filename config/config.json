@@ -14,7 +14,7 @@
         "port": "5432"
     },
     "logging": {
-        "log_file": "logs/tlc.log",
+        "log_file": "/Users/jbshome/Desktop/etl_folder/tlc_application_etl/logs/tlc.log",
         "log_level": "INFO",
         "log_datefmt": "%Y-%m-%d %H:%M:%S",
         "log_format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
@@ -23,7 +23,7 @@
         "$schema": "http://json-schema.org/draft-07/schema#",
         "type": "object",
         "properties": {
-            "app_no": {"type": "number", "minimum": 0},
+            "app_no": {"type": "float", "minimum": 0},
             "type": {"type": "string"},
             "app_date": {"type": "string", "format": "floating_timestamp"},
             "status": {"type": "string"},
